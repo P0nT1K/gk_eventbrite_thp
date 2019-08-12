@@ -30,7 +30,7 @@ class Event < ApplicationRecord
     #un event à plusieurs participants(user) via les insecriptions(attenances)
 
     def is_past?
-        start_date >= Times.now
+        start_date >= Date.today
     end
 
     def is_modulo5?
