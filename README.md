@@ -22,3 +22,14 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+*************************The Event Project*************************
+Page d'acceuil: Les Events
+S'inscrire ou se connecter pour créer un Event
+Vous pouvez completer votre profil (nom prénom description)
+Vous pouvez afficher un Event
+Je suis nul en CSS désolé pour le résultat
+
+*************************Lien Heroku: *************************
+
+ https://thp-eventbrite.herokuapp.com/
