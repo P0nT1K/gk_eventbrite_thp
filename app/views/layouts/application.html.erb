@@ -33,7 +33,7 @@
           </a>
       <% if user_signed_in? %> <!--si user connecté le bouton 'créer un event' s'affiche-->
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Mon Profil</a>
+                  <a class="dropdown-item"><%= link_to "Profil", user_path(current_user.id) %></a>
                   <a class="dropdown-item"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></a>
                 </div>
               </li>

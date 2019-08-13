@@ -16,7 +16,7 @@ class EventsController < ApplicationController
     def create
         @events = Event.new(title: params[:title], description: params[:description], start_date: params[:start_date], duration: params[:duration], price: params[:price], location: params[:location], administrator: current_user)
         
-        if @event.save()
+        if @events.save
             flash[:success] = "Event successfully edited"
             redirect_to root_path
           else
