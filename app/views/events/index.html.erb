@@ -1,20 +1,30 @@
 
+<div class="jumbotron jumbotron-fluid">
+    <div class="container justify-text-center">
+      <h1 class="display-4 text-black">Bienvenue dans The Event Project</h1>
+      <p class="lead text-white text-uppercase badge badge-primary text-wrap" style="width: 20rem;">Les Events de ta ville</p>
+    </div>
+</div>
+        
 
-
-
-<h1>Les Events de ta ville</h1>
-<% @events.each do |event|%>
-<div class="card-group"></div>
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title"><%=event.title%></h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p class="card-text"><%=event.description%></p>
-          <p class="card-text"><%=event.price%></p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
+      <% @events.each do |event|%>
+      <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-6 offset-md-3">
+            <div class="card-group"></div>
+                <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                      <h5 class="card-title"><%=event.title%></h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                      <p class="card-text"><%=event.description%></p>
+                      <p class="card-text"><%=event.price%></p>
+                      <%= link_to "Consulter", event_path(event.id), :class=> "btn btn-outline-primary" %>
+                  </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>    
+      <%end%>
+    
  
-      </div>
-</div>    
- <%end%>

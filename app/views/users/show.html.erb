@@ -1,5 +1,7 @@
 <p> le nom et le prénom : <%=@user.first_name%> <%=@user.last_name%> </p>
 <p>la description <%=@user.description%></p>
 <p>email: <%=@user.email%></p>
+<%= link_to "Mettre à jour son profil",  edit_user_path, :class=> "btn btn-outline-primary" %>
+
 
               
