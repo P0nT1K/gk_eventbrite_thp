@@ -1,0 +1,51 @@
+
+
+<div class="jumbotron">
+
+  <h1 class="display-4 ">Bienvenue dans The event Project</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <% if user_signed_in? %>
+  <%= button_to "Créer ton Event", new_event_path, :class=> "btn btn-primary btn-lg btn-block" %>
+  <% else %>
+  <p>Pour créer des Events c'est ici mais d'abord tu dois être connecté !</p>
+  <%= button_to "Se Connecter",  user_session_path, :class=> "btn btn-outline-primary" %>
+  <p>Tu n'as pas de compte? Crée le maintenant</p>
+  <%= button_to "Créer compte",  new_user_registration_path, :class=> "btn btn-outline-primary" %>
+  <% end %>
+</div>
+    
+
+<!-- <h1>Bienvenue dans The event Project</h1>
+<ul>
+  <% if user_signed_in? %>
+    <li>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    </li>
+
+    <li>
+      Voici ton email : <%= current_user.email %>
+    </li>
+
+    <li>
+      <%= link_to "Secret page", static_pages_secret_path %>
+    </li>
+
+    <li>
+      <%= link_to "Edit email / password", edit_user_registration_path %>
+    </li>
+
+  <% else %>
+    <li>    
+      <%= link_to "Sign in", new_user_session_path %>
+    </li>
+
+    <li>
+      <%= link_to "Sign up", new_user_registration_path %>
+    </li>
+
+  <% end %>
+</ul> -->
+
+
+

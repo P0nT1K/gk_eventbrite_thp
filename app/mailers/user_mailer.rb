@@ -13,14 +13,15 @@ class UserMailer < ApplicationMailer
     end
 
     def attendance_admin(attendance)
-      #on récupère l'instance user pour ensuite pouvoir la passer à la view en @user
-      @admin = attendance.event_id.administrator_id
-      @participant = attendance.participant_id
-      @participant_find = User.find(@participant).first_name
-      @event = attendance.event_id
-    
-      # c'est cet appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet.
-      mail(to: @admin.email, subject: "Un nouveau participant a rejoint votre évenement #{@event.title} !") 
+      @event_id= attendance.event_id #id de l'event ressort un integer
+      @title = Event.find(@event_id).title #ressort e titre de l'event en cherchant avec l'id
+      @admin_id = Event.find(@event_id).administrator_id #id de l'admin ressort un integer
+      @admin_email = User.find(@admin_id).email #ressort l'email de l'admin en cherchant avec l'id
+      @admin_first_name = User.find(@admin_id).first_name #ressort le nom de l'admin en cherchant avec l'id
+      @participant = attendance.participant_id #ressort l'id du participant
+      @participant_find = User.find(@participant).first_name #ressort le nom du participant en utilisant l'id
+
+      mail(to: @admin_email, subject: "Un nouveau participant a rejoint votre évenement #{@title} !") 
     end
 end
 
