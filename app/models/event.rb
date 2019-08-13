@@ -26,7 +26,7 @@ class Event < ApplicationRecord
     #appartiens à un User qui est administrateur
     has_many :attendances
     #un event à pluieurs inscription(attendences)
-    has_many :users, through: :attendances
+    has_many :participants, through: :attendances
     #un event à plusieurs participants(user) via les insecriptions(attenances)
 
     def is_past?

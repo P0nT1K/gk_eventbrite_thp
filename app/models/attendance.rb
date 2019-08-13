@@ -1,10 +1,14 @@
 class Attendance < ApplicationRecord
-    belongs_to :user
+   
+    belongs_to :participant, class_name: "User"
     belongs_to :event
 
-    #after_create :attendance_send
+   
+    after_create :attendance_admin
 
-    #def Attendance_send
-        #UserMailer.attendance_admin(self).deliver_now
-    #end
+    def attendance_admin
+        UserMailer.attendance_admin(self).deliver_now
+    end
+  
 end
+

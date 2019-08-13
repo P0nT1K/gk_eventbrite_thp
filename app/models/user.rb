@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     after_create :welcome_send
-    has_many :attendances
+    has_many :attendances, foreign_key: 'participant_id'
     #un user à plusieurs inscriptions(attendences)
     has_many :events, through: :attendances
     #participe à plusieurs EVT via les inscriptions
@@ -13,6 +13,6 @@ class User < ApplicationRecord
     def welcome_send
         UserMailer.welcome_email(self).deliver_now
     end
-
+    
     
 end

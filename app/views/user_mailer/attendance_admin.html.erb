@@ -4,9 +4,9 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Salut <%= @admin.first_name %> <%= @admin.last_name %>!</h1>
+    <h1>Salut <%= @admin.first_name%> !</h1>
     <p>
-      <% = @user.first_name%> s'est inscrits à ton event !
+      <%= @participant_find %> a rejoint votre évenement <%= @event.title %> !
     </p>
   </body>
 </html>
