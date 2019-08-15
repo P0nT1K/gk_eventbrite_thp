@@ -2,10 +2,12 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
+
+gem 'stripe'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pry' 
 gem 'rspec'
-gem 'dotenv'
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'faker'
 gem 'table_print'
 gem 'activerecord'
@@ -14,7 +16,6 @@ gem 'bcrypt'
 gem "font-awesome-rails"
 gem 'particles-js-rails'
 gem 'minitest-reporters'
-gem 'dotenv-rails'
 gem 'activerecord-reset-pk-sequence'
 gem 'devise'
 gem 'bootstrap', '~> 4.3.1'
