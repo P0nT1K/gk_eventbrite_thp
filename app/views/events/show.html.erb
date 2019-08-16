@@ -8,18 +8,28 @@
       <div class="container">
       <div class="card">
         <h5 class="card-header">
-          <a> <%= @event.title %> </a>
-          <a> <%= @event.description %> </a>
+          <p> <%= @event.title %> </p>
         </h5>
           <div class="card-body">
-            <h3 class="card-title"> <%= @event.administrator.first_name %> <%= @event.administrator.last_name %> </h3>
+            <h3 class="card-title">Créateur de l'Event: <%= @event.administrator.first_name %> <%= @event.administrator.last_name %> </h3>
+            <h5>Description</h5>
+            <p> <%= @event.description %> </p>
+            <p>Nombre de participants: <%= @event.participants.count%></p>
             <h5>Date de début</h5>
             <p class="card-text"> <%= @event.start_date.to_formatted_s(:long) %></p>
-         
+            <h5>Date de fin</h5>
+            <p class="card-text"><%=@end_date.to_formatted_s(:long)%></p>
             <h5>Lieux de l'Event</h5>
             <p class="card-text"> <%= @event.location %></p>
             <h5>Prix de l'inscription</h5>
-            <p class="card-text"> <%= @event.price %></p>
+            <p class="card-text"> <%= @event.price %> euros</p>
+            <%unless @admin || @already_attend %> 
+            <%= link_to "S'inscrire", new_attendance_path(@event.id), :class=> "btn btn-outline-primary" %>
+            <%end%>
+            <% if @admin %>
+            <p>Lien vers les participants et la possibilité d'éditer</p>
+            <p>Lien pour editer l'Event</p>
+            <% end%>
       </div>
 </div>
 
